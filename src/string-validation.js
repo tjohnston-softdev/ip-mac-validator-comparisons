@@ -69,13 +69,13 @@ function handleOutcome(inpStr, inpType, heavyValid, lightValid, exVal)
 	}
 	else
 	{
-		flaggedMessage = writeErrorMessage(inpType, inpStr, exVal);
+		flaggedMessage = writeErrorMessage(inpType, inpStr, exVal, heavyValid, lightValid);
 		throw new Error(flaggedMessage);
 	}
 }
 
 
-function writeErrorMessage(vType, vString, vExpect)
+function writeErrorMessage(vType, vString, vExpect, vHeavy, vLight)
 {
 	var writeRes = "";
 	
@@ -86,6 +86,10 @@ function writeErrorMessage(vType, vString, vExpect)
 	writeRes += "' should be ";
 	writeRes += formatExpectedValue(vExpect);
 	writeRes += " for both libraries.";
+	writeRes += "\r\n\t";
+	writeRes += formatActualValue("Heavy", vHeavy);
+	writeRes += " - ";
+	writeRes += formatActualValue("Light", vLight);
 	
 	return writeRes;
 }
@@ -100,6 +104,13 @@ function formatExpectedValue(exp)
 		formatRes = "valid";
 	}
 	
+	return formatRes;
+}
+
+
+function formatActualValue(actLbl, actVal)
+{
+	var formatRes = actLbl + ": " + actVal;
 	return formatRes;
 }
 
