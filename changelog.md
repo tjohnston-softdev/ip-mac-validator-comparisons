@@ -1,32 +1,16 @@
 # Changelog
 
-**./package.json**
-* Installed 'ip-regex' module.
-
----
-
 **./src/input-data.js**
-* New file - Defines arguments for input validation tests.
-* Returns arrays of valid and invalid values.
-* So far, only IPv4 has been defined.
-
----
-
-**./src/string-validation.js**
-* New file - Runs input validation for strings and compares results.
-* Only supports IPv4 so far.
-
----
-
-**./src/readme.md**
-* Deleted placeholder file.
+* Split 'getIpFourData' into two separate functions:
+	* getIpFourValidStrings
+	* getIpFourInvalidStrings
+* Removed the 'defineArgumentObject' function.
+* Each function returns an array of (in)valid values for the corresponding type.
 
 ---
 
 **./test/index.js**
-* Added requirements:
-	* ./src/input-data
-	* ./src/string-validation
-* Declared 'ipValues' global.
-	* Retrieves IPv4 values from 'inputData'
-* Wrote unit tests for IPv4 values.
+* Removed 'ipValues' global.
+* Restructured unit tests to:
+	* Retrieve array of input values.
+	* Pass into validation loop.

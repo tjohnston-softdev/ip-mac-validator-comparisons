@@ -3,7 +3,6 @@ const chai = require("chai");
 const expect = chai.expect;
 const inputData = require("../src/input-data");
 const stringValidation = require("../src/string-validation");
-const ipValues = inputData.getIpFour();
 
 describe("Validator Comparisons", function()
 {
@@ -11,12 +10,14 @@ describe("Validator Comparisons", function()
 	{
 		it("Valid", function()
 		{
-			stringValidation.compareIpFour(ipValues.valid, true);
+			var entryStrings = inputData.getIpFourValid();
+			stringValidation.compareIpFour(entryStrings, true);
 		});
 		
 		it("Invalid", function()
 		{
-			stringValidation.compareIpFour(ipValues.invalid, false);
+			var entryStrings = inputData.getIpFourInvalid();
+			stringValidation.compareIpFour(entryStrings, false);
 		});
 		
 	});
