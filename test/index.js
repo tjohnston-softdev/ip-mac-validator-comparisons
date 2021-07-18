@@ -21,4 +21,20 @@ describe("Validator Comparisons", function()
 		});
 		
 	});
+	
+	describe("IP Address V6", function()
+	{
+		it("Valid", function()
+		{
+			var entryStrings = inputData.getIpSixValid();
+			stringValidation.compareIpSix(entryStrings, true);
+		});
+		
+		it("Invalid", function()
+		{
+			var entryStrings = inputData.getIpSixInvalid();
+			stringValidation.compareIpSix(entryStrings, false);
+		});
+		
+	});
 });

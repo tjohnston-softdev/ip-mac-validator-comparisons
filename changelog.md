@@ -1,16 +1,19 @@
 # Changelog
 
 **./src/input-data.js**
-* Split 'getIpFourData' into two separate functions:
-	* getIpFourValidStrings
-	* getIpFourInvalidStrings
-* Removed the 'defineArgumentObject' function.
-* Each function returns an array of (in)valid values for the corresponding type.
+* Wrote new functions for IPv6 values:
+	* getIpSixValidStrings
+	* getIpSixInvalidStrings
+
+---
+
+**./src/string-validation.js**
+* Wrote 'compareIpSixStrings' function - Used to validate IPv6 strings.
+* Fixed mistake in 'writeErrorMessage'
+	* Before: `%vType% '%vString%'`
+	* After: `%vType string '%vString%'`
 
 ---
 
 **./test/index.js**
-* Removed 'ipValues' global.
-* Restructured unit tests to:
-	* Retrieve array of input values.
-	* Pass into validation loop.
+* Wrote unit tests for IPv6 values.

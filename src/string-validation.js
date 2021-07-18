@@ -23,6 +23,23 @@ function compareIpFourStrings(stringArr, expectValid)
 }
 
 
+function compareIpSixStrings(stringArr, expectValid)
+{
+	var stringIndex = 0;
+	var currentString = "";
+	var currentHeavy = false;
+	var currentLight = false;
+	
+	for (stringIndex = 0; stringIndex < stringArr.length; stringIndex = stringIndex + 1)
+	{
+		currentString = stringArr[stringIndex];
+		currentHeavy = validator.isIP(currentString, 6);
+		currentLight = ipRegex.v6(regOpts).test(currentString);
+		handleOutcome(currentString, "IPv6", currentHeavy, currentLight, expectValid);
+	}
+}
+
+
 function handleOutcome(inpStr, inpType, heavyValid, lightValid, expectVal)
 {
 	var handleRes = false;
@@ -46,7 +63,7 @@ function writeErrorMessage(vType, vString, vExpect)
 	
 	writeRes += "The ";
 	writeRes += vType;
-	writeRes += " '";
+	writeRes += " string '";
 	writeRes += vString;
 	writeRes += "' should be ";
 	writeRes += formatExpectedValue(vExpect);
@@ -72,5 +89,6 @@ function formatExpectedValue(exp)
 
 module.exports =
 {
-	compareIpFour: compareIpFourStrings
+	compareIpFour: compareIpFourStrings,
+	compareIpSix: compareIpSixStrings
 };
