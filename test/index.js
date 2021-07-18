@@ -4,6 +4,8 @@ const expect = chai.expect;
 const inputData = require("../src/input-data");
 const stringValidation = require("../src/string-validation");
 
+// Main testing script file.
+
 describe("Validator Comparisons", function()
 {
 	describe("IP Address V4", function()

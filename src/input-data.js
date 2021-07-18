@@ -1,9 +1,14 @@
+// This file defines input values for unit tests.
+
+
+// IPv4 - Valid
 function getIpFourValidStrings()
 {
 	var dataRes = ['127.0.0.1', '0.0.0.0', '255.255.255.255', '1.2.3.4', '255.0.0.1', '0.0.1.1'];
 	return dataRes;
 }
 
+// IPv4 - Invalid
 function getIpFourInvalidStrings()
 {
 	var dataRes = [];
@@ -15,6 +20,7 @@ function getIpFourInvalidStrings()
 }
 
 
+// IPv6 - Valid
 function getIpSixValidStrings()
 {
 	var dataRes = [];
@@ -26,6 +32,7 @@ function getIpSixValidStrings()
 }
 
 
+// IPv6 - Invalid
 function getIpSixInvalidStrings()
 {
 	var dataRes = [];
@@ -38,6 +45,7 @@ function getIpSixInvalidStrings()
 }
 
 
+// MAC Address - Valid
 function getMacValidStrings()
 {
 	var dataRes = [];
@@ -50,6 +58,7 @@ function getMacValidStrings()
 }
 
 
+// MAC Address - Invalid
 function getMacInvalidStrings()
 {
 	var dataRes = [];
