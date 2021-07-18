@@ -1,19 +1,24 @@
 # Changelog
 
+**./package.json**
+* Installed 'mac-regex' module.
+
+---
+
 **./src/input-data.js**
-* Wrote new functions for IPv6 values:
-	* getIpSixValidStrings
-	* getIpSixInvalidStrings
+* Wrote new functions for MAC Address values:
+	* getMacValidStrings
+	* getMacInvalidStrings
 
 ---
 
 **./src/string-validation.js**
-* Wrote 'compareIpSixStrings' function - Used to validate IPv6 strings.
-* Fixed mistake in 'writeErrorMessage'
-	* Before: `%vType% '%vString%'`
-	* After: `%vType string '%vString%'`
+* Required 'mac-regex' module.
+* Wrote 'compareMacStrings' function - Used to validate MAC Address strings.
+* handleOutcome
+	* Renamed 'expectVal' parameter to 'exVal'
 
 ---
 
 **./test/index.js**
-* Wrote unit tests for IPv6 values.
+* Wrote unit tests for MAC Address values.

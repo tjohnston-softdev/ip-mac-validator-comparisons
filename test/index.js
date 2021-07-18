@@ -37,4 +37,21 @@ describe("Validator Comparisons", function()
 		});
 		
 	});
+	
+	
+	describe("MAC Address", function()
+	{
+		it("Valid", function()
+		{
+			var entryStrings = inputData.getMacValid();
+			stringValidation.compareMac(entryStrings, true);
+		});
+		
+		it("Invalid", function()
+		{
+			var entryStrings = inputData.getMacInvalid();
+			stringValidation.compareMac(entryStrings, false);
+		});
+		
+	});
 });

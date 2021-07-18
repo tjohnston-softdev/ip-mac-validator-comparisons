@@ -2,6 +2,7 @@ const mocha = require("mocha");
 const chai = require("chai");
 const validator = require("validator");
 const ipRegex = require("ip-regex");
+const macRegex = require("mac-regex");
 const expect = chai.expect;
 const regOpts = {exact: true};
 
@@ -40,18 +41,35 @@ function compareIpSixStrings(stringArr, expectValid)
 }
 
 
-function handleOutcome(inpStr, inpType, heavyValid, lightValid, expectVal)
+function compareMacStrings(stringArr, expectValid)
+{
+	var stringIndex = 0;
+	var currentString = "";
+	var currentHeavy = false;
+	var currentLight = false;
+	
+	for (stringIndex = 0; stringIndex < stringArr.length; stringIndex = stringIndex + 1)
+	{
+		currentString = stringArr[stringIndex];
+		currentHeavy = validator.isMACAddress(currentString);
+		currentLight = macRegex(regOpts).test(currentString);
+		handleOutcome(currentString, "MAC Address", currentHeavy, currentLight, expectValid);
+	}
+}
+
+
+function handleOutcome(inpStr, inpType, heavyValid, lightValid, exVal)
 {
 	var handleRes = false;
 	var flaggedMessage = "";
 	
-	if (heavyValid === expectVal && lightValid === expectVal)
+	if (heavyValid === exVal && lightValid === exVal)
 	{
 		handleRes = true;
 	}
 	else
 	{
-		flaggedMessage = writeErrorMessage(inpType, inpStr, expectVal);
+		flaggedMessage = writeErrorMessage(inpType, inpStr, exVal);
 		throw new Error(flaggedMessage);
 	}
 }
@@ -90,5 +108,6 @@ function formatExpectedValue(exp)
 module.exports =
 {
 	compareIpFour: compareIpFourStrings,
-	compareIpSix: compareIpSixStrings
+	compareIpSix: compareIpSixStrings,
+	compareMac: compareMacStrings
 };
