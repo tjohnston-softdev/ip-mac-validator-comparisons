@@ -1,5 +1,3 @@
 # Changelog
 
-**./package.json**
-* Updated 'validator' package.
-* Might have fixed security vulnurabilities.
+Merge 'nov-21' branch.
