@@ -1,3 +1,3 @@
 # Changelog
 
-Merge 'nov-21' branch.
+Security vulnerabilities fixed. (Nov 2021)
