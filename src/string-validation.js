@@ -95,7 +95,7 @@ function writeErrorMessage(vType, vString, vExpect, vHeavy, vLight)
 	writeRes += formatExpectedValue(vExpect);
 	writeRes += [" for both libraries.", "\r\n\t"].join("");
 	writeRes += formatActualValue("Heavy", vHeavy);
-	writeRes += " - ";
+	writeRes += "\r\n\t";
 	writeRes += formatActualValue("Light", vLight);
 	
 	
