@@ -1,3 +1,3 @@
 # Changelog
 
-Public release
+Opened 'nov-21' branch.
