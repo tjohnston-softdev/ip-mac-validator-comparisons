@@ -1,3 +1,4 @@
 # Changelog
 
-Security vulnerabilities fixed. (Nov 2021)
+**./src/string-validation.js - writeErrorMessage**
+* Optimized string writing code.

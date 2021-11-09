@@ -91,17 +91,13 @@ function writeErrorMessage(vType, vString, vExpect, vHeavy, vLight)
 {
 	var writeRes = "";
 	
-	writeRes += "The ";
-	writeRes += vType;
-	writeRes += " string '";
-	writeRes += vString;
-	writeRes += "' should be ";
+	writeRes += ["The ", vType, "string '", vString, "' should be "].join("");
 	writeRes += formatExpectedValue(vExpect);
-	writeRes += " for both libraries.";
-	writeRes += "\r\n\t";
+	writeRes += [" for both libraries.", "\r\n\t"].join("");
 	writeRes += formatActualValue("Heavy", vHeavy);
 	writeRes += " - ";
 	writeRes += formatActualValue("Light", vLight);
+	
 	
 	return writeRes;
 }
