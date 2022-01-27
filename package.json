@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/tjohnston-softdev/ip-mac-validator-comparisons#readme",
   "dependencies": {
-    "chai": "^4.3.4",
+    "chai": "^4.3.6",
     "ip-regex": "^4.3.0",
     "mac-regex": "^1.0.0",
-    "mocha": "^9.1.3",
+    "mocha": "^9.2.0",
     "validator": "^13.7.0"
   }
 }
