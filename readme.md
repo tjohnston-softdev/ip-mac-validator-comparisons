@@ -1,5 +1,11 @@
 # IP/MAC Address Validator Comparisons
 
+---
+
+### As of 8 April 2022, this repository has been discontinued
+
+---
+
 This is a demo project that compares IP and MAC Address string validation between different libraries. The idea is to validate a given string using a [heavy](https://www.npmjs.com/package/validator) and a [lighter](https://www.npmjs.com/package/ip-regex) validation library to see whether the results match.
 
 Now, I love the [validator](https://www.npmjs.com/package/validator) library, I really do. However, I try to avoid unnecessary bloat in my projects. When you install 'validator', you install the whole suite of functions regardless of whether you actually plan on using them or not. This is fine when you're validating a wide variety of input but if its for just one or two types, it is a little excessive. Why download a ~700kb library full of stuff you're not going to use when the ~10kb library accomplishes the same thing? I ended up [downsizing](https://github.com/tjohnston-softdev/fox-controller-app/commit/4025ea6656266758a823f2b5910c80346713d77a) in one of my projects and it made no difference at all.
